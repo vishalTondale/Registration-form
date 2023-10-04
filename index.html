@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration_form</title>
+    <style>
+        body {
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            color: white;
+            height: 100%;
+            background-image: url(https://static.wixstatic.com/media/3e975b_f4712d5dd8f14b54b8482631cb879eb0~mv2.jpg/v1/fill/w_980,h_613,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/3e975b_f4712d5dd8f14b54b8482631cb879eb0~mv2.jpg);
+            background-position: center;
+            background-size:cover;
+            background-repeat:no-repeat;
+        }
+
+        .heading,legend{
+            text-decoration-line: underline;
+            text-decoration-color: brown;
+            color: bisque;
+            font-family:sans-serif;
+        }
+        .form {
+            background-color: rgb(8, 14, 18);
+        }
+        input,select,button{
+            background-color: rgb(185, 183, 185);
+            border-radius: 20px;
+        }
+        button{
+            
+            background-color: green;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 class="heading">Registration Form</h1>
+
+
+    <fieldset class="fieldset">
+        <legend style="text-align: center;">Personal details</legend>
+            <form action="success.html" class="form">
+                <label for="fn">First Name :</label>
+                <input type="text" id="fn" name="fn" placeholder="first name" size="15" required><br><br>
+                <label for="ln">Last Name :</label>
+                <input type="text" id="ln" name="ln" size="15" placeholder="Last name" required><br><br>
+
+                <label for="gender">Gender :</label>
+                    <input type="radio" name="gender" id="male" value="M">Male
+                    <input type="radio" name="gender" id="female" value="F">Female <br><br>
+                <label for="mail">Email :</label>
+                <input type="email" id="mail" name="mail" size="15" placeholder="example@gmail.com" required><br><br>
+                <label for="mobile">Mobile No. :</label>
+                <input type="tel" id="mobile" name="mobile" size="15" placeholder="9090909090"><br><br>
+
+                
+
+                <label for="photo">Upload Photo :</label>
+                <input type="file" id="photo" name="photo"><br><br>
+
+                <button type="reset">Reset form</button>
+    </fieldset>
+
+    <br><br><br>
+
+    <fieldset class="fieldset">
+        <legend style="text-align: center;">Educational details</legend>
+
+                <label for="hq">Highest Qualification :</label>
+                <select name="hq" id="hq" required>
+                    <option name="hq" value="Not-selected">Select</option>
+                    <option name="hq" value="post_graduation">Post Graduation</option>
+                    <option name="hq" value="graduation">Graduation</option>
+                    <option name="hq" value="deploma">Deploma</option>
+                    <option name="hq" value="hsc">Higher Secondary</option>
+                    <option name="hq" value="ssc">Secondary</option>
+                </select><br><br>
+                <label for="cn">College/University Name :</label>
+                <input type="text" id="cn" name="cn" placeholder="college/university" size="15"><br><br>
+                <label for="stream">Stream  :</label>
+                <input type="text" id="stream" name="stream" size="15" placeholder="Dept."><br><br>
+
+
+                <label for="yop">Passing Year :</label>
+                <input type="number" id="mail" name="mail" size="15" maxlength="4" placeholder="Year of passing" required><br><br>
+                <label for="marks">Marks</label>
+                <input type="tel" id="marks" name="marks" size="15" placeholder="marks in %" required><br><br>
+
+
+                <label for="skills">Skill Set :</label><br>
+                <input type="checkbox" name="skills" id="skill1" value="java">Java
+                <input type="checkbox" name="skills" id="skill2" value="html&css">HTML & CSS
+                <input type="checkbox" name="skills" id="skill3" value="js">JS
+                <input type="checkbox" name="skills" id="skill4" value="sql">SQL <br><br>
+                
+                <label for="resume">Upload Resume :</label>
+                <input type="file" id="resume" name="resume"><br><br>
+
+                <button type="submit">Submit form</button>
+        </form>
+    </fieldset>
+</body>
+</html>
