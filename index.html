@@ -18,28 +18,47 @@
             background-repeat:no-repeat;
         }
 
-        .heading,legend{
-            text-decoration-line: underline;
-            text-decoration-color: brown;
+        .heading{
+            text-decoration-line:overline;
+            text-decoration-color: rgb(234, 4, 169);
             color: bisque;
             font-family:sans-serif;
         }
-        .form {
-            background-color: rgb(8, 14, 18);
+        legend{
+            border-bottom: 2px dashed white;
+            color: rgb(44, 251, 8);
+            font-family:sans-serif;
         }
+
         input,select,button{
+            margin-top: 20px;
             background-color: rgb(185, 183, 185);
             border-radius: 20px;
         }
         button{
-            
-            background-color: green;
+            color: rgb(245, 242, 248);
+            font-weight: bold;
+            background-color: rgb(122, 199, 122);
+            cursor: pointer;
+        }
+        button:hover{
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            border: 2px solid red;
+
+        }
+        #reset {
+            background-color: rgb(108, 37, 138);
+        }
+        #submit:hover{
+            background-color: rgb(3, 140, 23);
         }
         
     </style>
 </head>
 <body>
-    <h1 class="heading">Registration Form</h1>
+    <h1 class="heading"><span style="color: gold;">Registration</span> <span style="color: #4285f4;">Form</span></h1>
 
 
     <fieldset class="fieldset">
@@ -63,7 +82,7 @@
                 <label for="photo">Upload Photo :</label>
                 <input type="file" id="photo" name="photo"><br><br>
 
-                <button type="reset">Reset form</button>
+                <button type="reset" id="reset">Reset form</button>
     </fieldset>
 
     <br><br><br>
@@ -101,8 +120,46 @@
                 <label for="resume">Upload Resume :</label>
                 <input type="file" id="resume" name="resume"><br><br>
 
-                <button type="submit">Submit form</button>
+                <center><button type="submit" id="submit">Submit form</button></center>
         </form>
     </fieldset>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
